@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Proyectos</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://picsum.photos/1600/900?grayscale');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .portfolio-title {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-gray-900">
+  <!-- Título principal del portafolio -->
+  <div class="text-center py-10">
+    <h1 class="text-white text-5xl font-bold portfolio-title">Mis Proyectos</h1>
+    <p class="text-gray-800 text-xl mt-4">Portafolio de proyectos en desarrollo y finalizados</p>
+  </div>
+
+  <!-- Tarjeta de Proyecto -->
+  <div class="max-w-sm mx-auto rounded-lg overflow-hidden shadow-2xl bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg">
+    <img class="w-full" src="po.png" alt="Imagen del proyecto">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">Proyecto en Desarrollo: App de Gestión</div>
+      <p class="text-gray-800 text-base">
+        Este es uno de los proyectos más importantes que he hecho, un Dashboard enfocado en gestionar productos.
+        Actualmente, estoy trabajando en la integración de nuevas funcionalidades, casi está finalizado, es uno de mis proyectos más importantes, uso tecnologías y frameworks como Angular, MySQL, Node.js.
+      </p>
+    </div>
+    <div class="px-6 py-4">
+      <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2">#desarrollo</span>
+      <span class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-green-700 mr-2">#productividad</span>
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#gestión</span>
+    </div>
+  </div>
+
+  <!-- Sección de contacto -->
+  <div class="text-center py-10">
+    <p class="text-gray-300 text-lg">¿Interesado?</p> <br>
+    <a href="mailto:miemail@ejemplo.com" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Contáctame anhkms@gmail.com</a>
+  </div>
+</body>
+</html>
