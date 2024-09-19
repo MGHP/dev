@@ -34,14 +34,24 @@
     
   <!-- Tarjeta de Proyecto -->
   <div class="max-w-sm mx-auto rounded-lg overflow-hidden shadow-2xl bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg">
-    <img class="w-full" src="po.png" alt="Imagen del proyecto">
+    <!-- Carrusel de imágenes -->
+    <div id="carousel" class="relative">
+      <div class="w-full">
+        <img id="slide-image" class="w-full" src="po.png" alt="Imagen del proyecto">
+
+      </div>
+      <!-- Controles de navegación -->
+      <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2">❮</button>
+      <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2">❯</button>
+    </div>
+  
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Proyecto en Desarrollo DashProd: App de Gestión</div>
       <p class="text-gray-800 text-base">
         Este dashboard, diseñado para optimizar la gestión de productos, ofrece una solución completa y escalable. Con funcionalidades como almacenamiento de imágenes, formularios intuitivos, tablas de datos y seguridad basada en JWT, permite a los usuarios gestionar de manera eficiente su catálogo de productos. Actualmente estoy trabajando en la integración de un backend robusto para ampliar aún más sus capacidades y ofrecer una experiencia de usuario excepcional.
       </p>
     </div>
-
+  
     <!-- Sección de tecnologías usadas -->
     <div class="px-6 py-4 tech-icons">
       <span class="font-bold text-lg mb-2">Tecnologías usadas:</span>
@@ -49,17 +59,17 @@
         <img src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg" alt="Angular">
         <img src="https://cdn.worldvectorlogo.com/logos/mysql-3.svg" alt="MySQL">
         <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js">
-        <!-- <img src="https://cdn.worldvectorlogo.com/logos/tailwindcss.svg" alt="Tailwind CSS" class="w-8 h-8"> -->
         <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg" alt="Bootstrap" class="w-8 h-8">
       </div>
     </div>
-
+  
     <div class="px-6 py-4">
       <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-blue-700 mr-2">#desarrollo</span>
       <span class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-green-700 mr-2">#productividad</span>
       <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#gestión</span>
     </div>
   </div>
+  
 
    <!-- Tarjeta de Proyecto 222-->
    <div class="max-w-sm mx-auto rounded-lg overflow-hidden shadow-2xl bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg">
@@ -136,4 +146,33 @@ function copyToClipboard() {
     document.getElementById("toast-success").classList.add("hidden");
   }, 3000);
 }
+//CAROUSEL
+document.addEventListener('DOMContentLoaded', () => {
+  const images = ['po.png','proyect3.png', 'proyect.png','proyect4.png']; // Ruta
+  const images_2 = ['proyect2.png', 'proyect21.png', 'proyect22.png'];
+
+  let currentIndex = 0;
+
+  const slideImage = document.getElementById('slide-image');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+
+  // Función para cambiar de imagen
+  function showImage(index) {
+    slideImage.src = images[index];
+  }
+
+  // Evento para botón "anterior"
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+    showImage(currentIndex);
+  });
+
+  // Evento para botón "siguiente"
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    showImage(currentIndex);
+  });
+});
+
 </script>
