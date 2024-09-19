@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Proyectos</title>
+  <link rel="shortcut icon" href="codefolder.ico" />
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -73,7 +74,16 @@
 
    <!-- Tarjeta de Proyecto 222-->
    <div class="max-w-sm mx-auto rounded-lg overflow-hidden shadow-2xl bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg">
-    <img class="w-full" src="proyect2.png" alt="Imagen del proyecto">
+       <!-- Carrusel de imágenes -->
+       <div id="carousel-2" class="relative">
+        <div class="w-full">
+          <img id="slide-image-2" class="w-full" src="proyect2.png" alt="Imagen del proyecto">
+  
+        </div>
+        <!-- Controles de navegación -->
+        <button id="prev-2" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2">❮</button>
+        <button id="next-2" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2">❯</button>
+      </div>
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Proyecto en Desarrollo Subise: ecommerce</div>
       <p class="text-gray-800 text-base">
@@ -149,8 +159,7 @@ function copyToClipboard() {
 //CAROUSEL
 document.addEventListener('DOMContentLoaded', () => {
   const images = ['po.png','proyect3.png', 'proyect.png','proyect4.png']; // Ruta
-  const images_2 = ['proyect2.png', 'proyect21.png', 'proyect22.png'];
-
+ 
   let currentIndex = 0;
 
   const slideImage = document.getElementById('slide-image');
@@ -173,6 +182,35 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
     showImage(currentIndex);
   });
-});
 
+  
+   // Carrusel 2
+   const images2 = ['proyect2.png', 'proyect21.png'];
+  let currentIndex2 = 0;
+
+  const slideImage2 = document.getElementById('slide-image-2');
+  const prevButton2 = document.getElementById('prev-2');
+  const nextButton2 = document.getElementById('next-2');
+
+  // Inicializar primera imagen de carrusel 2
+  slideImage2.src = images2[currentIndex2];
+
+  // Función para cambiar imagen en carrusel 2
+  function showImage2(index) {
+    slideImage2.src = images2[index];
+  }
+
+  // Eventos del carrusel 2
+  prevButton2.addEventListener('click', () => {
+    currentIndex2 = (currentIndex2 === 0) ? images2.length - 1 : currentIndex2 - 1;
+    showImage2(currentIndex2);
+  });
+
+  nextButton2.addEventListener('click', () => {
+    currentIndex2 = (currentIndex2 === images2.length - 1) ? 0 : currentIndex2 + 1;
+    showImage2(currentIndex2);
+  });
+ 
+
+}); 
 </script>
